@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Export Finance Dashboard
+
+A modern dashboard designed for expert finance professionals and export finance bankers, streamlining their workflow and providing a comprehensive suite of tools for analysis, calculation, and decision-making.
+
+## Project Objective
+
+The Export Finance Dashboard aims to centralize and simplify the daily tasks of export finance professionals. By integrating essential tools, calculators, and resources into a single, intuitive interface, the dashboard helps users save time, reduce errors, and make informed decisions faster.
+
+## Key Features
+
+- **OECD Premium Calculator**: Instantly calculate premiums based on country, risk, and quality of cover.
+- **CIRR Rates & Country Categories**: Quick access to current CIRR rates and country risk categories.
+- **Resource Menu**: Dropdown menu for fast navigation to earnings, ETFs, investor holdings, super investors, hedge fund letters, APIs, formulas, blogs, insider trades, and stock lists.
+- **Relevant Documentation**: Easy access to important files and documentation.
+- **Modern UI/UX**: Built with [Next.js](https://nextjs.org), [shadcn/ui](https://ui.shadcn.com/), and [lucide-react](https://lucide.dev/) for a clean, responsive, and professional look.
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+3. **Open your browser:**
+   Visit [http://localhost:3000](http://localhost:3000) to view the dashboard.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
+- Next.js (App Router)
+- React
+- shadcn/ui (Radix UI)
+- lucide-react (icons)
+- Tailwind CSS
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Author
+- **Seb Lopez**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Copyright
+© {CURRENT_YEAR} Seb Lopez. All rights reserved.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For feedback, suggestions, or contributions, please open an issue or pull request.
