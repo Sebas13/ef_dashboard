@@ -1,102 +1,64 @@
+"use client";
 import Image from "next/image";
+import PremiumCalculator from "./PremiumCalculator";
+import DashboardMenu from "./DashboardMenu";
 
 export default function Home() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.toLocaleString('en-US', { month: 'short' });
+  const formattedDate = `${year} ${month}`;
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-[#18181b] text-white flex flex-col rounded-2xl border border-white/20 p-4 sm:p-8 max-w-5xl mx-auto">
+      {/* Header */}
+      <header className="pt-6 pb-2 text-center">
+        <h1 className="text-2xl sm:text-3xl font-semibold mb-1">Export finance Dashboard</h1>
+        <p className="text-lg sm:text-xl text-white/80">Ultimate set of tools for the EF pro</p>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Main content grid */}
+      <main className="flex-1 flex flex-col gap-6 justify-center">
+        {/* Dashboard Menu */}
+        <div className="mb-2 flex justify-start">
+          <DashboardMenu />
         </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          {/* CIRR rates */}
+          <div className="rounded-2xl border border-white/20 p-4 flex items-center justify-center min-h-[90px] text-lg font-medium bg-[#232329]">CIRR rates</div>
+          {/* Country categories */}
+          <div className="rounded-2xl border border-white/20 p-4 flex items-center justify-center min-h-[90px] text-lg font-medium bg-[#232329]">Country categories</div>
+          {/* Relevant documentation */}
+          <div className="rounded-2xl border border-white/20 p-4 flex flex-col bg-[#232329] min-h-[180px]">
+            <div className="flex items-center gap-2 mb-2">
+              {/* Folder icon placeholder */}
+              <span className="inline-block w-5 h-5 bg-white/20 rounded mr-1 flex items-center justify-center">
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white/80"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7a2 2 0 012-2h4l2 2h6a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" /></svg>
+              </span>
+              <span className="font-medium">Relevant documentation</span>
+            </div>
+            <ul className="flex-1 flex flex-col gap-1 pl-1">
+              <li className="flex items-center gap-2">
+                <input type="checkbox" className="accent-white/80" disabled />
+                <span>Name of file 1</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <input type="checkbox" className="accent-white/80" disabled />
+                <span>Name of file 2</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <input type="checkbox" className="accent-white/80" disabled />
+                <span>Name of file 3</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {/* Premium calculator (spans width) */}
+        <PremiumCalculator />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="mt-8 py-3 border-t border-white/10 text-center text-white/60 text-sm">
+        {`Build 0.0.0. | © ${formattedDate} by Seb Lopez`}
       </footer>
     </div>
   );
